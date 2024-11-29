@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DailyMatchesController;
 use App\Http\Controllers\UniqueTournmentController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Http\Request; // Import the controller
 
 use Illuminate\Support\Facades\Route;
@@ -39,4 +40,49 @@ Route::prefix('v1')->group(function () {
     Route::get('/unique-tournament/{leagueId}/season/{seasonId}/events/next/0', [UniqueTournmentController::class, 'getSeasonNextMatches']);
     Route::get('/unique-tournament/{leagueId}/seasons', [UniqueTournmentController::class, 'getSeasons']);
 
+
+
+
+       // teams endpoints
+    
+       Route::get('/team/{teamId}"', [TeamController::class, 'fetchAndStoreTeamDetails']);
+       Route::get('/team/{teamId}/events/last/0', [TeamController::class, 'getTeamPastMatches']);
+       Route::get('/team/{teamId}/events/next/0', [TeamController::class, 'getTeamNextMatches']);
+       Route::get('/team/{teamId}/players', [TeamController::class, 'getTeamSquad']);
+       Route::get('/team/{seasonId}/standings/seasons"', [TeamController::class, 'getTeamStandings']);
+       Route::get('/team/{teamId}/events/last/0', [TeamController::class, 'teamPreviousH2H']);
+       Route::get('/event/{customId}/h2h/events"', [TeamController::class, 'getTeamMatchH2H']);
+
+
+       
+
+
+       
+
+
+
+   
+
+
+
+
+   
+
+
+
+   
+
+
+
+      
+
+
+
+
+
+
+
+
+
+      
 });
