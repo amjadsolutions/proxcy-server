@@ -46,7 +46,7 @@ class TeamController extends Controller
     public function getTeamSquad($teamId)
     {
       
-
+dd('Amjad');
         $response = Http::withoutVerifying()->get("https://sofascore.com/api/v1/team/" . $teamId . "/players");
             dd($response);
         if ($response->successful()) {
