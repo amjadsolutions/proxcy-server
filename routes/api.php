@@ -63,6 +63,8 @@ Route::prefix('v1')->group(function () {
 
 
     Route::get('/team/{teamId}/image', [ImagesController::class, 'getTeamImages']);
+    Route::get('/player/{playerId}/image', [ImagesController::class, 'getPlayerImages']);
+    Route::get('/unique-tournament/{leagueId}/image', [ImagesController::class, 'getLeagueImages']);
  
 
 });
