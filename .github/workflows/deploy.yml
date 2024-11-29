@@ -20,4 +20,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}  # Corrected input for username
         password: ${{ secrets.FTP_PASSWORD }}  # Corrected input for password
         local-dir: ./  # Local directory to deploy from
-        server-dir: /public_html/  # Correct server directory path (ending with /)
+        server-dir: /api1.asalkahani.com/  # Correct server directory path (ending with /)
