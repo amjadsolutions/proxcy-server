@@ -1,4 +1,4 @@
-name: Deploy Laravel App to api1.asalkahani.com
+name: FTP Deploy
 
 on:
   push:
@@ -10,21 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: |
-        composer install --optimize-autoloader --no-dev
-        php artisan config:cache
-        php artisan route:cache
-        php artisan view:cache
-
-    - name: Deploy to api1.asalkahani.com
+    - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./ # Adjust if necessary
-        server-dir: /api1.asalkahani.com # Ensure this matches your directory structure
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./ # Local directory to deploy from
+        server-dir: /api1.asalkahani.com/  # Correct path ending with '/'
