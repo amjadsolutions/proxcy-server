@@ -70,8 +70,6 @@ Route::prefix('v1')->group(function () {
 
 
     // player Image
-
-
     Route::get('/seo/content/player/{playerId}/en', [PlayerController::class, 'getPlayerContents']);
        
 
