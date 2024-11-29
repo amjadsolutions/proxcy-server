@@ -4,6 +4,7 @@ use App\Http\Controllers\DailyMatchesController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UniqueTournmentController;
 use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\PlayerController;
 use Illuminate\Http\Request; // Import the controller
 
 use Illuminate\Support\Facades\Route;
@@ -65,6 +66,15 @@ Route::prefix('v1')->group(function () {
     Route::get('/team/{teamId}/image', [ImagesController::class, 'getTeamImages']);
     Route::get('/player/{playerId}/image', [ImagesController::class, 'getPlayerImages']);
     Route::get('/unique-tournament/{leagueId}/image', [ImagesController::class, 'getLeagueImages']);
+
+
+
+    // player Image
+
+
+    Route::get('/seo/content/player/{playerId}/en', [PlayerController::class, 'getPlayerContents']);
+       
+
  
 
 });
