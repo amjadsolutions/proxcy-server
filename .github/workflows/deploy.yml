@@ -16,8 +16,8 @@ jobs:
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        ftp-server: ${{ secrets.FTP_SERVER }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./ # Local directory to deploy from
-        server-dir: /api1.asalkahani.com/  # Correct path ending with '/'
+        server: ${{ secrets.FTP_SERVER }}  # Corrected input for server
+        username: ${{ secrets.FTP_USERNAME }}  # Corrected input for username
+        password: ${{ secrets.FTP_PASSWORD }}  # Corrected input for password
+        local-dir: ./  # Local directory to deploy from
+        server-dir: /api1.asalkahani.com/  # Correct server directory path (ending with /)
