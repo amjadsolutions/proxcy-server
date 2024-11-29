@@ -3,6 +3,7 @@
 use App\Http\Controllers\DailyMatchesController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UniqueTournmentController;
+use App\Http\Controllers\ImagesController;
 use Illuminate\Http\Request; // Import the controller
 
 use Illuminate\Support\Facades\Route;
@@ -46,17 +47,22 @@ Route::prefix('v1')->group(function () {
     Route::get('/team/{teamId}/events/last/0', [TeamController::class, 'getTeamPastMatches']);
     Route::get('/team/{teamId}/events/next/0', [TeamController::class, 'getTeamNextMatches']);
     Route::get('/team/{teamId}/players', [TeamController::class, 'getTeamSquad']);
-    Route::get('/team/{seasonId}/standings/seasons"', [TeamController::class, 'getTeamStandings']);
+    Route::get('/team/{seasonId}/standings/seasons', [TeamController::class, 'getTeamStandings']);
     Route::get('/team/{teamId}/events/last/0', [TeamController::class, 'teamPreviousH2H']);
-    Route::get('/event/{customId}/h2h/events"', [TeamController::class, 'getTeamMatchH2H']);
-    Route::get('/seo/content/team/{teamId}/en""', [TeamController::class, 'teamContents']);
+    Route::get('/event/{customId}/h2h/events', [TeamController::class, 'getTeamMatchH2H']);
+    Route::get('/seo/content/team/{teamId}/en', [TeamController::class, 'teamContents']);
 
     // matches endpoints
 
     Route::get('/event/{matchId}', [TeamController::class, 'getSpecificMatchDetails']);
-    Route::get('/event/{matchId}/lineups"', [TeamController::class, 'getMatchLineups']);
-    Route::get('/event/{matchId}/innings""', [TeamController::class, 'getMatchInnings']);
-    Route::get('/event/{matchId}/h2h"', [TeamController::class, 'getMatchH2H']);
-    Route::get('/odds/1/featured-events-by-tiers/cricket"', [TeamController::class, 'getFeaturedMatch']);
+    Route::get('/event/{matchId}/lineups', [TeamController::class, 'getMatchLineups']);
+    Route::get('/event/{matchId}/innings', [TeamController::class, 'getMatchInnings']);
+    Route::get('/event/{matchId}/h2h', [TeamController::class, 'getMatchH2H']);
+    Route::get('/odds/1/featured-events-by-tiers/cricket', [TeamController::class, 'getFeaturedMatch']);
+
+
+
+    Route::get('/team/{teamId}/image', [ImagesController::class, 'getTeamImages']);
+ 
 
 });
