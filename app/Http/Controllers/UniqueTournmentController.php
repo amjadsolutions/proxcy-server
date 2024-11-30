@@ -29,7 +29,7 @@ class UniqueTournmentController extends Controller
             return response()->json($response->json());
         }
         // Handle errors
-        return response()->json(['error' => 'Unable to fetch data'], $response->status());
+        return null;
     }
 
     public function getSeasonPreviousMatches($leagueId, $seasonId)
