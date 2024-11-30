@@ -58,11 +58,11 @@ Route::prefix('v1')->group(function () {
 
     // matches endpoints
 
-    Route::get('/event/{matchId}', [TeamController::class, 'getSpecificMatchDetails']);
-    Route::get('/event/{matchId}/lineups', [TeamController::class, 'getMatchLineups']);
-    Route::get('/event/{matchId}/innings', [TeamController::class, 'getMatchInnings']);
-    Route::get('/event/{matchId}/h2h', [TeamController::class, 'getMatchH2H']);
-    Route::get('/odds/1/featured-events-by-tiers/cricket', [TeamController::class, 'getFeaturedMatch']);
+    Route::get('/event/{matchId}', [MatchController::class, 'getSpecificMatchDetails']);
+    Route::get('/event/{matchId}/lineups', [MatchController::class, 'getMatchLineups']);
+    Route::get('/event/{matchId}/innings', [MatchController::class, 'getMatchInnings']);
+    Route::get('/event/{matchId}/h2h', [MatchController::class, 'getMatchH2H']);
+    Route::get('/odds/1/featured-events-by-tiers/cricket', [MatchController::class, 'getFeaturedMatch']);
 
 
 
