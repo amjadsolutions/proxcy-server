@@ -40,8 +40,8 @@ Route::prefix('v1')->group(function () {
     // league endpoints
     Route::get('/unique-tournament/{leagueId}/season/{seasonId}/info', [UniqueTournmentController::class, 'getSeasonInfo']);
     Route::get('/unique-tournament/{leagueId}/featured-events', [UniqueTournmentController::class, 'getFeaturedMatch']);
-    Route::get('/seo/content/unique-tournament/{leagueId}/en");', [UniqueTournmentController::class, 'getLeagueContents']);
-    Route::get('/unique-tournament/{leagueId}/season/{seasonId}/top-players/overall"', [UniqueTournmentController::class, 'getSeasonPlayerStats']);
+    Route::get('/seo/content/unique-tournament/{leagueId}/en', [UniqueTournmentController::class, 'getLeagueContents']);
+    Route::get('/unique-tournament/{leagueId}/season/{seasonId}/top-players/overall', [UniqueTournmentController::class, 'getSeasonPlayerStats']);
     Route::get('/unique-tournament/{leagueId}', [UniqueTournmentController::class, 'topLeagueDetails']);
     Route::get('/unique-tournament/{leagueId}/season/seasonId/standings/total', [UniqueTournmentController::class, 'getSeasonStandings']);
     Route::get('/unique-tournament/{leagueId}/season/{seasonId}/events/last/0', [UniqueTournmentController::class, 'getSeasonPreviousMatches']);
@@ -50,7 +50,7 @@ Route::prefix('v1')->group(function () {
 
     // teams endpoints
 
-    Route::get('/team/{teamId}"', [TeamController::class, 'fetchAndStoreTeamDetails']);
+    Route::get('/team/{teamId}', [TeamController::class, 'fetchAndStoreTeamDetails']);
     Route::get('/team/{teamId}/events/last/0', [TeamController::class, 'getTeamPastMatches']);
     Route::get('/team/{teamId}/events/next/0', [TeamController::class, 'getTeamNextMatches']);
     Route::get('/team/{teamId}/players', [TeamController::class, 'getTeamSquad']);
