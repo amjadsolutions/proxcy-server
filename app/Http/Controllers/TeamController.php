@@ -32,7 +32,7 @@ class TeamController extends Controller
 
     }
 
-    public function getTeamNextMatches($leagueId, $seasonId)
+    public function getTeamNextMatches($teamId)
     {
         // If data does not exist in Redis, fetch from API
         $response = Http::withoutVerifying()->get("https://www.sofascore.com/api/v1/team/" . $teamId . "/events/next/0");
