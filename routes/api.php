@@ -38,6 +38,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/sport/cricket/scheduled-events/{date}', [DailyMatchesController::class, 'getDailyMatches']);
 
     // league endpoints
+    Route::get('/unique-tournament/{leagueId}/seasons', [UniqueTournmentController::class, 'getSeasons']);
     Route::get('/unique-tournament/{leagueId}/season/{seasonId}/info', [UniqueTournmentController::class, 'getSeasonInfo']);
     Route::get('/unique-tournament/{leagueId}/featured-events', [UniqueTournmentController::class, 'getFeaturedMatch']);
     Route::get('/seo/content/unique-tournament/{leagueId}/en', [UniqueTournmentController::class, 'getLeagueContents']);
@@ -46,7 +47,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/unique-tournament/{leagueId}/season/seasonId/standings/total', [UniqueTournmentController::class, 'getSeasonStandings']);
     Route::get('/unique-tournament/{leagueId}/season/{seasonId}/events/last/0', [UniqueTournmentController::class, 'getSeasonPreviousMatches']);
     Route::get('/unique-tournament/{leagueId}/season/{seasonId}/events/next/0', [UniqueTournmentController::class, 'getSeasonNextMatches']);
-    Route::get('/unique-tournament/{leagueId}/seasons', [UniqueTournmentController::class, 'getSeasons']);
+ 
 
     // teams endpoints
 

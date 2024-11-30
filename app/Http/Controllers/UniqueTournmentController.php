@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 class UniqueTournmentController extends Controller
 {
-    public function getSeasons($league)
+    public function getSeasons($leagueId)
     {
 
         $response = Http::withoutVerifying()->get("https://sofascore.com/api/v1/unique-tournament/" . $leagueId . "/seasons");
