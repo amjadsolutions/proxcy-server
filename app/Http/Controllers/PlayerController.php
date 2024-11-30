@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class PlayerController extends Controller
 {
 
-    public function getTeamMatchH2H($customId)
+    public function getPlayerDetails($playerId)
     {
 
         $response = Http::withoutVerifying()->get("https://sofascore.com/api/v1/player/" . $playerId);
