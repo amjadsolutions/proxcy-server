@@ -4,6 +4,9 @@ use App\Http\Controllers\DailyMatchesController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\LiveMatchesController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\MatchController;
+
+
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UniqueTournmentController;
 use Illuminate\Http\Request;
