@@ -62,6 +62,8 @@ class TeamController extends Controller
     {
 
         $response = Http::withoutVerifying()->get("https://www.sofascore.com/api/v1/team/" . $seasonId . "/standings/seasons");
+
+
         if ($response->successful()) {
             return response()->json($response->json());
         }
@@ -96,7 +98,8 @@ class TeamController extends Controller
 
     public function teamContents($teamId)
     {
-        $responseContents = Http::withoutVerifying()->get("https://sofascore.com/api/v1/seo/content/team/" . $teamId . "/en");
+      
+        $response = Http::withoutVerifying()->get("https://sofascore.com/api/v1/seo/content/team/" . $teamId . "/en");
 
         if ($response->successful()) {
             return response()->json($response->json());
