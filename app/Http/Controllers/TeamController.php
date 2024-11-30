@@ -49,8 +49,7 @@ class TeamController extends Controller
       
 // dd('Amjad');
         $response = Http::withoutVerifying()->get("https://sofascore.com/api/v1/team/" . $teamId . "/players");
-            dd($response);
-            dd($response);
+         
         if ($response->successful()) {
             return response()->json($response->json());
         }
