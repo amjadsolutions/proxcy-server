@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
+use Throwable;
 
 use Illuminate\Http\Request;
 
